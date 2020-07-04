@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.css">
+    </link>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/MarkerCluster.Default.css">
+    </link>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+        integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+        crossorigin="" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/dc9180e397.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style2.css">
+
+    <title>口罩地圖</title>
+</head>
+
+<body>
+    <div class="wrap d-flex">
+        <div class="aside">
+            <div class="hideIcon d-flex align-items-center justify-content-center">
+                <i class="fas fa-caret-left text-white h4 m-0"></i>
+            </div>
+            <div class="aside-header pb-3">
+                <div class="d-flex py-2 align-items-center justify-content-between col-12">
+                    <h2 class="day-today mb-0 pr-0"></h2>
+                    <div class="text-right">
+                        <p class="full-date mb-0"></p>
+                        <p class="even m-0 d-none">身分證末碼為
+                            <span class="IdYellow">2,4,6,8,0</span>可購買</p>
+                        <p class="odd m-0 d-none">身分證末碼為
+                            <span class="IdYellow">1,3,5,7,9</span>可購買</p>
+                        <p class="allId sundayText m-0 text-white d-none"><span class="IdYellow">所有民眾</span>皆可購買</p>
+                    </div>
+                </div>
+
+                <div class="d-flex">
+                    <div class="form-group col-md-6">
+                        <label for="county">選擇縣市</label>
+                        <select class="form-control jscounty" id="county" name="county">
+                            <option value="縣市" selected>縣市</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="zones">選擇鄉鎮區</label>
+                        <select class="form-control jstown" id="zones" name="district" required>
+                            <option selected>鄉鎮區</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="inputAddress">輸入地址</label>
+                    <div class="form-group input-group">
+                        <input type="address" class="form-control address_search" id="inputAddress"
+                            placeholder="請輸入您的地址">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-light addressBtn" type="button">搜尋</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 左方列表區 -->
+            <div class="listArea">
+                <ul class="list list-unstyled p-3"></ul>
+            </div>
+        </div>
+        <!-- 地圖區塊 -->
+        <div id="mapid"></div>
+
+    </div>
+
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.4.1/leaflet.markercluster.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="all2.js"></script>
+
+</body>
+
+</html>
